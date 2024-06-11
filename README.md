@@ -6,7 +6,7 @@ A Powerful Cloudflare WAF Anti DDoS rule I made for preventing bots, VPNs/Proxie
 The included items in my Cloudflare WAF rule is:
 
 - Any bot detected by Cloudflare
-- Chrome version 50-109
+- Chrome version 30-109
 - Many cloud ASNs
 
 ### Rule Conditions
