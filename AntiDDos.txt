@@ -8,3 +8,7 @@
 (http.user_agent contains "Chrome/6") or 
 (http.user_agent contains "Chrome/9") or
 (http.user_agent contains "Chrome/10")
+or
+(http.user_agent contains "Chrome/3")
+or
+(http.user_agent contains "Chrome/4")
