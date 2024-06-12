@@ -12,14 +12,5 @@ The included items in my Cloudflare WAF rule is:
 
 ### How to add the rule
 - Before deployment please make sure to set the action to block.
-- Then choose one of the mirrors (1 and 4 are the best ones because they have a fast CDN)
-
-## Mirrors
-- [Mirror 1](https://cdn.jsdelivr.net/gh/SomeTechyGuy/Cloudflare-WAF-Rule@main/AntiDDos.txt)
-
-- [Mirror 2](https://raw.githubusercontent.com/SomeTechyGuy/Cloudflare-WAF-Rule/main/AntiDDos.txt)
-
-- [Mirror 3](https://gitlab.com/cjhar1224/My-website/-/raw/main/public/Cloudflare-WAF-rule.txt)
-
-- [Mirror 4](https://cstuff.cz/Cloudflare-WAF-rule.txt)
-
+- Copy the [rule](https://cstuff.cz/Cloudflare-WAF-rule.txt) and then paste it into the Cloudflare WAF rule
+- Click deploy and then most of your DDoS, users with proxies or VPNs, bots, and many cloud providers should be blocked
