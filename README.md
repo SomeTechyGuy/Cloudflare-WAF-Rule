@@ -11,6 +11,7 @@ The included items in my Cloudflare WAF rule is:
 
 ### How to add the rule
 - Before deployment please make sure to set the action to block.
+- Then choose one of the mirrors (1, 3, 4, and 6 are the best ones because they have a fast CDN)
 
 # Mirror 1
 [Link Text](https://cdn.jsdelivr.net/gh/SomeTechyGuy/Cloudflare-WAF-Rule@main/AntiDDos.txt)
