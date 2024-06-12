@@ -3,8 +3,7 @@ name: Update README with jsdelivr content
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
-  workflow_dispatch:  # Allows manual triggering
+      - main
 
 jobs:
   update-readme:
@@ -20,38 +19,6 @@ jobs:
 
       - name: Update README.md
         run: |
-          node -e "
-            const fs = require('fs');
-            
-            // Read the content from the file
-            const content = fs.readFileSync('content.txt', 'utf8');
-
-            // Read the existing README.md content
-            let readme = fs.readFileSync('README.md', 'utf8');
-
-            // Find the markers in the README.md content
-            const startMarker = '<!-- BEGIN JSDELIVR CONTENT -->';
-            const endMarker = '<!-- END JSDELIVR CONTENT -->';
-            const startIndex = readme.indexOf(startMarker);
-            const endIndex = readme.indexOf(endMarker) + endMarker.length;
-
-            if (startIndex === -1 || endIndex === -1) {
-              throw new Error('Markers not found in README.md');
-            }
-
-            // Update the README.md content between the markers
-            readme = readme.substring(0, startIndex) + startMarker + '\n```plaintext\n' + content + '\n```\n' + readme.substring(endIndex);
-
-            // Write the updated content back to README.md
-            fs.writeFileSync('README.md', readme);
-          "
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m "Update README with jsdelivr content"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          sed -i '/<!-- BEGIN JSDELIVR CONTENT -->/,/<!-- END JSDELIVR CONTENT -->/d' README.md
+          sed -i '/<!-- BEGIN JSDELIVR CONTENT -->/r content.txt' README.md
+          sed -i '/<!-- END JSDELIVR CONTENT -->/a\n```' README.md
