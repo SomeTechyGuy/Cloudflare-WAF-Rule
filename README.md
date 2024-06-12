@@ -9,6 +9,6 @@ The included items in my Cloudflare WAF rule is:
 - Chrome version 30-109
 - Many cloud ASNs
 
-### Rule Conditions
-- Make sure to set the action to block before deploying
+### How to add the rule
+- Before deployment please make sure to set the action to block.
 
