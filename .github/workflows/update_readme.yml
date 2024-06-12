@@ -19,26 +19,14 @@ jobs:
           curl -s https://cdn.jsdelivr.net/gh/SomeTechyGuy/Cloudflare-WAF-Rule@main/AntiDDos.txt -o content.txt
 
       - name: Update README.md
-        uses: actions/github-script@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const fs = require('fs');
-
-            // Read the content from the file
-            const content = fs.readFileSync('content.txt', 'utf8');
-
-            // Read the existing README.md content
-            let readme = fs.readFileSync('README.md', 'utf8');
-
-            // Find the markers in the README.md content
-            const startMarker = '<!-- BEGIN JSDELIVR CONTENT -->';
-            const endMarker = '<!-- END JSDELIVR CONTENT -->';
-            const startIndex = readme.indexOf(startMarker);
-            const endIndex = readme.indexOf(endMarker) + endMarker.length;
-
-            // Update the README.md content between the markers
-            readme = readme.substring(0, startIndex) + startMarker + '\n```plaintext\n' + content + '\n```\n' + readme.substring(endIndex);
-
-            // Write the updated content back to README.md
-            fs.writeFileSync('README.md', readme);
+        run: |
+          sed -i '/<!-- BEGIN JSDELIVR CONTENT -->/,/<!-- END JSDELIVR CONTENT -->/d' README.md
+          sed -i '1{/<!-- BEGIN JSDELIVR CONTENT -->/q}' README.md
+          sed -i '1i<!-- BEGIN JSDELIVR CONTENT -->' README.md
+          sed -i '1{/<!-- END JSDELIVR CONTENT -->/q}' README.md
+          sed -i '1i\n```\n' README.md
+          sed -i '1i'"$(cat content.txt)'"' README.md
+          sed -i '1i\n```' README.md
+          git add README.md
+          git commit -m "Update README.md with jsdelivr content" --author "GitHub Actions" --date=$(date)
+          git push --quiet https://github.com/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}.git HEAD:main
