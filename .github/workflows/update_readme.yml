@@ -1,0 +1,44 @@
+name: Update README with jsdelivr content
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch content from jsdelivr
+        run: |
+          curl -s https://cdn.jsdelivr.net/gh/SomeTechyGuy/Cloudflare-WAF-Rule@main/AntiDDos.txt -o content.txt
+
+      - name: Update README.md
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+
+            // Read the content from the file
+            const content = fs.readFileSync('content.txt', 'utf8');
+
+            // Read the existing README.md content
+            let readme = fs.readFileSync('README.md', 'utf8');
+
+            // Find the markers in the README.md content
+            const startMarker = '<!-- BEGIN JSDELIVR CONTENT -->';
+            const endMarker = '<!-- END JSDELIVR CONTENT -->';
+            const startIndex = readme.indexOf(startMarker);
+            const endIndex = readme.indexOf(endMarker) + endMarker.length;
+
+            // Update the README.md content between the markers
+            readme = readme.substring(0, startIndex) + startMarker + '\n```plaintext\n' + content + '\n```\n' + readme.substring(endIndex);
+
+            // Write the updated content back to README.md
+            fs.writeFileSync('README.md', readme);
