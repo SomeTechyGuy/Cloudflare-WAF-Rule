@@ -12,5 +12,3 @@ The included items in my Cloudflare WAF rule is:
 ### Rule Conditions
 - Make sure to set the action to block before deploying
 
-<!-- BEGIN JSDELIVR CONTENT -->
-<!-- END JSDELIVR CONTENT -->
