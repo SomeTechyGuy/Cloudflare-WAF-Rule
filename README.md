@@ -12,5 +12,5 @@ The included items in my Cloudflare WAF rule is:
 
 ### How to add the rule
 - Before deployment please make sure to set the action to block.
-- Copy the [rule](https://cstuff.cz/Cloudflare-WAF-rule.txt) and then paste it into the Cloudflare WAF rule
-- Click deploy and then most of your DDoS, users with proxies or VPNs, bots, and many cloud providers should be blocked
+- Copy the [rule](https://cstuff.cz/Cloudflare-WAF-rule.txt) and then paste it into the Cloudflare WAF rule.
+- Click deploy and then most of your DDoS, users with proxies or VPNs, bots, and many cloud providers should be blocked.
