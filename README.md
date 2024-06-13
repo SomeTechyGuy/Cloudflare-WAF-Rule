@@ -11,6 +11,6 @@ The included items in my Cloudflare WAF rule is:
 - Firefox 30-79
 
 ### How to add the rule
-- Before deployment please make sure to set the action to block.
-- Copy the [rule](https://cstuff.cz/Cloudflare-WAF-rule.txt) and then paste it into the Cloudflare WAF rule.
-- Click deploy and then most DDoSes, users with proxies or VPNs, bots, and cloud providers should be blocked.
+- Before making the rule please make sure to turn off bot fight mode if it's on.
+- Copy [this rule](https://cstuff.cz/Cloudflare-WAF-rule.txt) [or the one in this mirror](https://raw.githubusercontent.com/SomeTechyGuy/Cloudflare-WAF-Rule/main/AntiDDos.txt) or if that wont work use [this mirror](https://gitlab.com/cjhar1224/My-website/-/raw/main/public/Cloudflare-WAF-rule.txt) and then paste it into the Cloudflare WAF rule you made.
+- Now set the action to block, click deploy, and then most DDoSes, users with proxies or VPNs, bots, and cloud providers should be blocked.
