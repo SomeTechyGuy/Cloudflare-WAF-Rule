@@ -8,7 +8,7 @@ The included items in my Cloudflare WAF rule is:
 - Any bot detected by Cloudflare
 - Chrome version 30-109
 - Many cloud ASNs
-- Firefox 30-79
+- Firefox 30-109
 
 ### How to add the rule
 - Before making the rule please make sure to turn off bot fight mode if it's on.
