@@ -6,9 +6,9 @@ A Powerful Cloudflare WAF Anti DDoS rule I made that has even been tested by a r
 The included items in my Cloudflare WAF rule is:
 
 - Any bot detected by Cloudflare
-- Chrome version 3-109
+- Chrome version 3-119
 - Many cloud ASNs
-- Firefox 3-109
+- Firefox 3-119
 
 ### How to add the rule
 - Before making the rule please make sure to turn off bot fight mode if it's on.
