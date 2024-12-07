@@ -1,5 +1,5 @@
 # Cloudflare-WAF-Rule
-A Powerful Cloudflare WAF Anti DDoS rule I made that has even been tested by a real DDoS service for preventing bots, VPNs/Proxies, Old browsers, and Cloud IPs from accessing your website.
+A Powerful Cloudflare WAF Anti DDoS rule I made that has even been tested by a real DDoS service and made with abusive servers attacking my site for preventing bots, VPNs/proxies, old browsers and cloud IPs from accessing your website.
 
 ## WAF Rule Details
 
@@ -8,6 +8,8 @@ The included items in my Cloudflare WAF rule is:
 - Any bot detected by Cloudflare
 - Chrome version 3-119
 - Many cloud ASNs
+- Many VPNs/proxies including TOR
+- Path finders
 - Firefox 3-119
 
 ### How to add the rule
