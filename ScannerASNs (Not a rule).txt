@@ -1,0 +1,3 @@
+#Add these ASNs to a WAF rule
+398722
+211298
