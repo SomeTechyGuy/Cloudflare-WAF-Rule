@@ -1,6 +1,8 @@
 # Cloudflare-WAF-Rule
 A Powerful Cloudflare WAF Anti DDoS rule I made that has even been tested by a real DDoS service and made with abusive servers attacking my site for preventing bots, VPNs/proxies, old browsers and cloud IPs from accessing your website.
 
+![Screenshot of rule blocking lots of stuff](Screenshot From 2025-04-28 15-03-07.png "Screenshot of it used on a website")
+
 ## WAF Rule Details
 
 The included items in my Cloudflare WAF rule is:
