@@ -16,7 +16,7 @@ The included items in my Cloudflare WAF rule is:
 
 ### How to add the rule
 - Before making the rule please make sure to turn off bot fight mode if it's on.
-- Copy [this ruleset](https://cstuff.cz/Cloudflare-WAF-rule.txt) or one of the [mirrors](#Mirrors) and then paste it into the Cloudflare WAF rule you made.
+- Copy [this ruleset](https://cjtek.click/Cloudflare-WAF-rule.txt) or one of the [mirrors](#Mirrors) and then paste it into the Cloudflare WAF rule you made.
 - Now set the action to block, click deploy and then most DDoSes, users with proxies/VPNs, bots and cloud providers should be blocked.
 
 ## Mirrors
